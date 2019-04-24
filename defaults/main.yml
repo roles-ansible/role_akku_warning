@@ -7,4 +7,3 @@ install_and_enable_cronie: false
 
 # play a video in the background with sound
 multimedia_akku_warning: true
-

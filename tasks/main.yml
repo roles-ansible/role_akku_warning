@@ -21,7 +21,7 @@
 - name: install zenity and mpv for notifications
   become: yes
   package:
-    name: 
+    name:
       - zenity
       - mpv
     state: present
