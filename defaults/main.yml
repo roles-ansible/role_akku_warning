@@ -1,4 +1,6 @@
 ---
+# which user are we currently using?
+akku_user: "{{ ansible_user_id }}"
 
 # should we install cronie?
 install_and_enable_cronie: false

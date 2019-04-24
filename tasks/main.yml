@@ -1,5 +1,4 @@
 ---
-
 - name: copy sound warning script
   become: yes
   copy:
@@ -33,7 +32,7 @@
     name: check if akku still okay
     job: /opt/akku.sh
     minute: '*/3'
-    user: '{{ user }}'
+    user: '{{ akku_user }}'
     cron_file: /etc/crontab
 
 - name: Make sure cron is installed
@@ -52,4 +51,3 @@
     state: started
     enabled: yes
     daemon_reload: yes
- 
