@@ -3,7 +3,7 @@
 
 This ansible warning will install an bash Script, that will be executet every 3 minutes.
 
-If your batterie is under 25 min, it will make a warning.
+If your batterie is under 25 min, it will start warning you.
 
 This role is only tested on arch, but probably will work on all distros!
 

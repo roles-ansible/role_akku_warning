@@ -1,4 +1,7 @@
 ---
+- include_tasks: versioncheck.yml
+  when: submodules_versioncheck|bool
+
 - name: copy sound warning script
   become: yes
   copy:
@@ -16,7 +19,7 @@
     owner: 'root'
     group: 'root'
     mode: '0644'
-  when: multimedia_akku_warning
+  when: multimedia_akku_warning|bool
 
 - name: install zenity and mpv for notifications
   become: yes
@@ -37,7 +40,7 @@
 
 - name: Make sure cron is installed
   become: true
-  when: install_and_enable_cronie
+  when: install_and_enable_cronie|bool
   package:
     name:
       - cronie
@@ -45,7 +48,7 @@
 
 - name: Make sure cron is running
   become: true
-  when: install_and_enable_cronie
+  when: install_and_enable_cronie|bool
   systemd:
     name: cronie.service
     state: started
