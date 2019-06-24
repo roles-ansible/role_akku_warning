@@ -1,10 +1,10 @@
  Akku Warning role
 ---------------------
-<a href="https://galaxy.ansible.com/do1jlr/akku-warning"><img width="80px" src="https://galaxy.ansible.com/assets/galaxy-logo-02.svg"/></a>
+<a href="https://galaxy.ansible.com/do1jlr/akku_warning"><img width="80px" src="https://galaxy.ansible.com/assets/galaxy-logo-02.svg"/></a>
 
 ### Get it directly from Ansible Galaxy 
 ```bash
-$ ansible-galaxy install do1jlr.i3wm
+$ ansible-galaxy install do1jlr.akku_warning
 ```
 
 ### Function
