@@ -14,8 +14,8 @@
 - name: copy sound warning video
   become: yes
   copy:
-    src: 'files/low_battery.mkv'
-    dest: '/opt/low_battery.mkv'
+    src: 'files/low_battery.m4a'
+    dest: '/opt/low_battery.m4a'
     owner: 'root'
     group: 'root'
     mode: '0644'
