@@ -5,7 +5,7 @@ power="$((`cat /sys/class/power_supply/BAT0/energy_now` * 100 / `cat /sys/class/
 if (( $power < 25 && $power > 15 )); then
     zenity --warning --title="Low Power" --text="$power percent remaining.\n\nPlease recharge soon!" --display=:0.0
 elif (( $power < 15 && $power > 9 )); then
-    if (( RANDOM % 2 )); then zenity --warning --title="Low Power" --text="$power percent remaining.\n\nPlease recharge soon!" --display=:0.0; else  mpv /opt/low_battery.mkv -fs --volume 130 --start 00:00:18 --vo=tct > /dev/null ; fi
+    if (( RANDOM % 2 )); then zenity --warning --title="Low Power" --text="$power percent remaining.\n\nPlease recharge soon!" --display=:0.0; else  pulsemixer --set-volume 95; mpv {{ akku_sound_dest }} -fs --volume 130 --start 00:00:18 --vo=tct > /dev/null ; fi
 elif (( $power < 9 && $power > 5 )); then
     zenity --warning --title="Critical Power" --text="$power percent remaining.\n\nPlease recharge NOW!" --display=:0.0
 elif (( $power < 5 )); then

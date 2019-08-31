@@ -2,6 +2,10 @@
 # which user are we currently using?
 akku_user: "{{ ansible_user_id }}"
 
+# which sound should we play?
+akku_sound_src: 'files/low_battery.m4a'
+akku_sound_src: '/opt/low_battery.m4a'
+
 # should we install cronie?
 install_and_enable_cronie: false
 
