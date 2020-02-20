@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/chaos-bodensee/role_akku_warning.svg?branch=master)](https://travis-ci.org/chaos-bodensee/role_akku_warning)
+[![MIT License](https://raw.githubusercontent.com/chaos-bodensee/role_akku_warning/master/.github/license.svg?sanitize=true)](https://github.com/chaos-bodensee/role_akku_warning/blob/master/LICENSE)
+
  Akku Warning role
 ---------------------
 <a href="https://galaxy.ansible.com/do1jlr/akku_warning"><img width="80px" src="https://galaxy.ansible.com/assets/galaxy-logo-02.svg"/></a>

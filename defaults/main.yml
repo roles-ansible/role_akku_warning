@@ -12,5 +12,8 @@ install_and_enable_cronie: false
 # play a video in the background with sound
 multimedia_akku_warning: true
 
+# you want to install missing packages?
+manage_packages_akku_warning: true
+
 # version check for this playbook
 submodules_versioncheck: true
