@@ -20,8 +20,8 @@
       - cronie
     state: present
   when:
-    -  manage_packages_akku_warning | bool
-    - install_and_enable_cronie|bool
+    - manage_packages_akku_warning | bool
+    - install_and_enable_cronie | bool
 
 - name: Check akku every 2 minutes
   become: yes
@@ -34,7 +34,7 @@
 
 - name: Make sure cron is running
   become: true
-  when: install_and_enable_cronie|bool
+  when: install_and_enable_cronie | bool
   systemd:
     name: cronie.service
     state: started
