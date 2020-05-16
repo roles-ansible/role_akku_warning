@@ -16,6 +16,12 @@ This role is tested with the [i3 - improved tiling wm](https://i3wm.org/), insta
 ansible-galaxy install do1jlr.akku_warning
 ```
 
+You can execute the role **directly via ansible ad-hoc commands**, but it is highly recomended to create a ansible playbook
+```bash
+# example ad-hoc command
+ansible -m include_role -a "name=do1jlr.akku_warning" localhost
+```
+
 ### example playbook with galaxy
 ```yaml
 ---
