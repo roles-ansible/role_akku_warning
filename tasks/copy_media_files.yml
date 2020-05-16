@@ -2,7 +2,7 @@
 - name: copy sound warning script
   become: yes
   template:
-    src: 'templates/akku.sh'
+    src: 'templates/akku.sh.j2'
     dest: '/opt/akku.sh'
     owner: 'root'
     group: 'root'

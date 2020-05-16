@@ -23,7 +23,7 @@
     - manage_packages_akku_warning | bool
     - install_and_enable_cronie | bool
 
-- name: Check akku every 2 minutes
+- name: Check akku every 3 minutes
   become: yes
   cron:
     name: check if akku still okay
