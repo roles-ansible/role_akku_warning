@@ -45,6 +45,8 @@ git clone https://github.com/roles-ansible/role_akku_warning.git
    - akku_warning
   roles:
     - role_akku_warning
+  vars:
+    submodules_versioncheck: true
 ```
 
  Variables:
