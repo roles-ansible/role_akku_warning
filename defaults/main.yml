@@ -1,4 +1,8 @@
 ---
+# simple version check for this playbook
+# true is highly recomended
+submodules_versioncheck: false
+
 # which user are we currently using?
 akku_user: "{{ ansible_user_id }}"
 
@@ -14,6 +18,3 @@ multimedia_akku_warning: true
 
 # you want to install missing packages?
 manage_packages_akku_warning: true
-
-# version check for this playbook
-submodules_versioncheck: true
