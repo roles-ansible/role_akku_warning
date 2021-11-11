@@ -1,7 +1,7 @@
 ---
 - name: copy sound warning script
   become: true
-  template:
+  ansible.builtin.template:
     src: 'templates/akku.sh.j2'
     dest: '/opt/akku.sh'
     owner: 'root'
@@ -10,7 +10,7 @@
 
 - name: copy sound warning video
   become: true
-  copy:
+  ansible.builtin.copy:
     src: "{{ akku_sound_src }}"
     dest: "{{ akku_sound_dest }}"
     owner: 'root'

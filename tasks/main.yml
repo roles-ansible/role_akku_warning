@@ -15,14 +15,5 @@
     state: present
   when: manage_packages_akku_warning | bool
 
-- name: Check akku every 3 minutes
-  become: true
-  ansible.builtin.cron:
-    name: check if akku still okay
-    job: /opt/akku.sh
-    minute: '*/3'
-    user: '{{ akku_user }}'
-    cron_file: /etc/crontab
-    state: absent
-
-# todo: systemd timer
+- name: set timer
+  ansible.builtin.include_tasks: timer.yml

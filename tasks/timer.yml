@@ -1,0 +1,12 @@
+---
+- name: Check akku every 3 minutes
+  become: true
+  ansible.builtin.cron:
+    name: check if akku still okay
+    job: /opt/akku.sh
+    minute: '*/3'
+    user: '{{ akku_user }}'
+    cron_file: /etc/crontab
+    state: absent
+  failed_when: false
+
