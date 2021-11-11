@@ -1,33 +1,28 @@
 ---
-- include_tasks: versioncheck.yml
+- name: run optional versionscheck
+  ansible.builtin.include_tasks: versioncheck.yml
   when: submodules_versioncheck|bool
 
-- include_tasks: copy_media_files.yml
+- name: copy media files
+  ansible.builtin.include_tasks: copy_media_files.yml
 
 - name: install zenity and mpv for notifications
   become: true
-  package:
+  ansible.builtin.package:
     name:
       - zenity
       - mpv
     state: present
   when: manage_packages_akku_warning | bool
 
-- name: Make sure cron is installed
-  become: true
-  package:
-    name:
-      - cron
-    state: present
-  when:
-    - manage_packages_akku_warning | bool
-    - install_and_enable_cronie | bool
-
 - name: Check akku every 3 minutes
   become: true
-  cron:
+  ansible.builtin.cron:
     name: check if akku still okay
     job: /opt/akku.sh
     minute: '*/3'
     user: '{{ akku_user }}'
     cron_file: /etc/crontab
+    state: absent
+
+# todo: systemd timer
