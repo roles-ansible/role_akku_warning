@@ -1,6 +1,6 @@
 ---
 - name: copy sound warning script
-  become: yes
+  become: true
   template:
     src: 'templates/akku.sh.j2'
     dest: '/opt/akku.sh'
@@ -9,7 +9,7 @@
     mode: '0755'
 
 - name: copy sound warning video
-  become: yes
+  become: true
   copy:
     src: "{{ akku_sound_src }}"
     dest: "{{ akku_sound_dest }}"
