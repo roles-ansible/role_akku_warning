@@ -8,6 +8,8 @@ ansible role: akku warning
 cronjob is going to be removed!
 systemd timer intruduces
 variables may change!
+
+TODO: Verhalten bei akku losen geräten verbessern!
 ```
 
 
