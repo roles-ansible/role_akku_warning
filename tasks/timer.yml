@@ -1,12 +1,24 @@
 ---
-- name: Check akku every 3 minutes
+- name: setup battery_check.service
   become: true
-  ansible.builtin.cron:
-    name: check if akku still okay
-    job: /opt/akku.sh
-    minute: '*/3'
-    user: '{{ akku_user }}'
-    cron_file: /etc/crontab
-    state: absent
-  failed_when: false
+  ansible.builtin.template:
+    src: 'templates/battery_check.service.j2'
+    dest: '/usr/lib/systemd/system/battery_check.service'
+    mode: 0755
+    owner: root
+    group: root
+  notify:
+    - systemctl daemon-reload
+    - systemctl start battery_check.service
 
+- name: setup battery_check.timer
+  become: true
+  ansible.builtin.template:
+    src: 'templates/battery_check.timer.j2'
+    dest: '/usr/lib/systemd/system/battery_check.timer'
+    mode: 0755
+    owner: root
+    group: root
+  notify:
+    - systemctl daemon-reload
+    - systemctl enable battery_check.timer

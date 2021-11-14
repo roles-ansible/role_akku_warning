@@ -1,0 +1,10 @@
+[Unit]
+Description=Check battery charging status
+
+[Service]
+Type=simple
+ExecStart=/opt/akku.sh
+User={{ akku_user }}
+
+[Install]
+WantedBy=multi-user.target

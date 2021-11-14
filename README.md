@@ -3,6 +3,14 @@
 ansible role: akku warning
 ==========================
 
+# rewrite in progress!!!
+```
+cronjob is going to be removed!
+systemd timer intruduces
+variables may change!
+```
+
+
 This ansible role installs a bash script (per cronjob) which is executed every 3 minutes. This bash script checks if the battery level is below 25 percent and is currently not charging. If this is the case, the program [zenity](https://de.wikipedia.org/wiki/Zenity) installed by this role will generate a popup message stating that the battery is low.
 While the battery level is between 15 and 10 percent, it will also attempt to play a sound. But this does not (yet) work reliably.
 
