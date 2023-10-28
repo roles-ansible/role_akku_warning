@@ -3,16 +3,16 @@ galaxy_info:
   author: do1jlr
   description: Get a popup if the akku is getting low, get a warning sound, if the akku is even lower.
   role_name: akku_warning
+  namespace: l3d
   license: MIT
-  min_ansible_version: 2.11
-  github_branch: master
+  min_ansible_version: "2.13"
   platforms:
-    - name: Archlinux
-      versions: all
+    - name: ArchLinux
+      versions: ['all']
     - name: Debian
-      versions: all
+      versions: ['all']
     - name: Ubuntu
-      versions: all
+      versions: ['all']
   galaxy_tags:
     - akku
     - warning
@@ -21,4 +21,5 @@ galaxy_info:
     - arch
     - desktop
     - batterie
+    - linux
 dependencies: []

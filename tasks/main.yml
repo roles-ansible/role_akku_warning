@@ -1,19 +1,23 @@
 ---
-- name: run optional versionscheck
-  ansible.builtin.include_tasks: versioncheck.yml
+- name: Run optional versionscheck
+  ansible.builtin.include_tasks:
+    file: 'versioncheck.yml'
   when: submodules_versioncheck|bool
 
-- name: copy media files
-  ansible.builtin.include_tasks: copy_media_files.yml
+- name: Copy media files
+  ansible.builtin.include_tasks:
+    file: 'copy_media_files.yml'
 
-- name: install zenity and mpv for notifications
+- name: Install zenity and mpv for notifications
   become: true
   ansible.builtin.package:
-    name:
-      - zenity
-      - mpv
-    state: present
+    name: "{{ item }}"
+    state: 'present'
+  loop:
+    - 'zenity'
+    - 'mpv'
   when: manage_packages_akku_warning | bool
 
-- name: set timer
-  ansible.builtin.include_tasks: timer.yml
+- name: Set timer
+  ansible.builtin.include_tasks:
+    file: 'timer.yml'
