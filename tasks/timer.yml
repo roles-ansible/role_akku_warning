@@ -1,24 +1,24 @@
 ---
-- name: setup battery_check.service
+- name: Setup battery_check.service
   become: true
   ansible.builtin.template:
     src: 'templates/battery_check.service.j2'
     dest: '/usr/lib/systemd/system/battery_check.service'
-    mode: 0755
-    owner: root
-    group: root
+    mode: '0755'
+    owner: 'root'
+    group: 'root'
   notify:
-    - systemctl daemon-reload
-    - systemctl start battery_check.service
+    - 'Run systemctl daemon-reload'
+    - 'Run systemctl start battery_check.service'
 
-- name: setup battery_check.timer
+- name: Setup battery_check.timer
   become: true
   ansible.builtin.template:
     src: 'templates/battery_check.timer.j2'
     dest: '/usr/lib/systemd/system/battery_check.timer'
-    mode: 0755
-    owner: root
-    group: root
+    mode: '0755'
+    owner: 'root'
+    group: 'root'
   notify:
-    - systemctl daemon-reload
-    - systemctl enable battery_check.timer
+    - 'Run systemctl daemon-reload'
+    - 'Run systemctl enable battery_check.timer'

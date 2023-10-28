@@ -1,16 +1,16 @@
 ---
-- name: systemctl daemon-reload
+- name: Run systemctl daemon-reload
   become: true
   ansible.builtin.systemd:
     daemon_reload: true
 
-- name: systemctl start battery_check.service
+- name: Run systemctl start battery_check.service
   become: true
   ansible.builtin.systemd:
     name: 'battery_check.service'
     state: started
 
-- name: systemctl enable battery_check.timer
+- name: Run systemctl enable battery_check.timer
   become: true
   ansible.builtin.systemd:
     name: 'battery_check.timer'
